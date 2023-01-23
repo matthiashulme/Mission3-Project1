@@ -45,20 +45,23 @@ namespace Mission_3___Project_1
                     player1 = true;
                 }
                 // Call boardWinner Method in Support Class
-                bool[] result = s.boardWinner(gameBoard);
-                
-                // Display results if Win
-                if (result[0] == true)
+                int result = s.boardWinner(gameBoard);
+
+                // Display results if Win or Draw
+                if (result == 1)
                 {
+                    Console.WriteLine("Player 1 Wins!");
                     done = true;
-                    if (result[1] == true)
-                    {
-                        Console.WriteLine("Player 1 Wins!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Player 2 Wins!");
-                    }
+                }
+                else if (result == 2)
+                {
+                    Console.WriteLine("Player 2 Wins!");
+                    done = true;
+                }
+                else if (result == 3)
+                {
+                    Console.WriteLine("Cat's Game!");
+                    done = true;
                 }
             }
         }
